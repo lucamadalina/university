@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="MS-Lab1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/MS-Lab1/jcommon-1.0.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/MS-Lab1/jfreechart-1.0.19.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

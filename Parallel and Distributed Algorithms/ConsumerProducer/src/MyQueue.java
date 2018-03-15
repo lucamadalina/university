@@ -13,6 +13,7 @@ public class MyQueue {
             System.out.println("Coada este goala!");
             wait();
         }
+        sleep(100);
         queue.remove();
         System.out.println("Am sters un element");
         notify();
@@ -24,6 +25,7 @@ public class MyQueue {
             System.out.println("Coada este plina!");
             wait();
         }
+	sleep(100);
         queue.add(new Random().nextInt(100));
         System.out.println("Am adaugat un element");
         notify();

@@ -1,0 +1,8 @@
+﻿MPI-T1.obj : error LNK2019: unresolved external symbol MPI_Bcast referenced in function main
+MPI-T1.obj : error LNK2019: unresolved external symbol MPI_Reduce referenced in function main
+MPI-T1.obj : error LNK2019: unresolved external symbol MPI_Comm_size referenced in function main
+MPI-T1.obj : error LNK2019: unresolved external symbol MPI_Comm_rank referenced in function main
+MPI-T1.obj : error LNK2019: unresolved external symbol MPI_Init referenced in function main
+MPI-T1.obj : error LNK2019: unresolved external symbol MPI_Finalize referenced in function main
+MPI-T1.obj : error LNK2019: unresolved external symbol MPI_Abort referenced in function main
+B:\Anul3Sem2\PDA\university\Parallel and Distributed Algorithms\MPI-T1\x64\Debug\MPI-T1.exe : fatal error LNK1120: 7 unresolved externals

@@ -1,4 +1,5 @@
-﻿MPI-T1.obj : error LNK2019: unresolved external symbol MPI_Bcast referenced in function main
+﻿  MPI-T1.cpp
+MPI-T1.obj : error LNK2019: unresolved external symbol MPI_Bcast referenced in function main
 MPI-T1.obj : error LNK2019: unresolved external symbol MPI_Reduce referenced in function main
 MPI-T1.obj : error LNK2019: unresolved external symbol MPI_Comm_size referenced in function main
 MPI-T1.obj : error LNK2019: unresolved external symbol MPI_Comm_rank referenced in function main

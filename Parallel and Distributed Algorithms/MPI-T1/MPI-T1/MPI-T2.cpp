@@ -1,4 +1,4 @@
-#include <math.h>
+aua#include <math.h>
 #include "stdafx.h"
 #include "stdlib.h"
 #include <iostream>
@@ -27,31 +27,24 @@ public class MPI2 {
 		MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
 		MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-		for(i=0; i<nprocs; i++) {
-			int myNumber = rand() %100;
-			int receive;
-			for(j=0; j<nprocs; j++) {
-				if(i !=j) {
-					MPI_Send(&myNumber, 1, MPI_INT, j, ARSIZE, MPI_COMM_WORLD);
-					MPI_Recv(&receive, 1, MPI_INT, j, ARSIZE, MPI_COMM_WORLD, &status);
-					if(receive > myNumber) {
-						master = j;
-					}
-					if(receive < myNumber) {
-						master = i;
-					}
-					if(receive == myNumber) {
-						if(i>j) {
-							master = i;
-						} else {
-							master = j;
-						}
-					}
-				}
-			}
+		if (rank == 0) {
+			MPI_Send(&myNumber, 1, MPI_INT, 1, ARSIZE, MPI_COMM_WORLD);
+			MPI_Recv(&receive, 1, MPI_INT, numprocs-1, ARSIZE, MPI_COMM_WORLD, &status);
+		}
+		else {
+			MPI_Recv(&receive, 1, MPI_INT, rank - 1, ARSIZE, MPI_COMM_WORLD, &status);
+			MPI_Send(&myNumber, 1, MPI_INT, rank+1, ARSIZE, MPI_COMM_WORLD);
+		}
+		if (receive > myNumber) {
+			master = rank+1;
+		}
+		if (receive < myNumber) {
+			master = rank;
+		}
+		if (receive == myNumber) {
+			master = rank - 1;
+		}
+			
 		MPI_Finalize();
 	}
-}
-
-
 }
